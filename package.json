@@ -12,11 +12,16 @@
   "dependencies": {
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.3.0",
+    "@reduxjs/toolkit": "^2.9.0",
     "framer-motion": "^12.23.22",
     "lucide-react": "^0.544.0",
+    "pdfjs-dist": "^5.4.149",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^7.9.3",
+    "react-speech-recognition": "^4.0.1",
+    "redux-persist": "^6.0.0",
     "three": "^0.180.0"
   },
   "devDependencies": {

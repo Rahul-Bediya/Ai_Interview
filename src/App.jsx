@@ -19,7 +19,8 @@ const App = () => {
       <Route path="/profile" element={<Profile/>}/>
       <Route path="/interview" element={<Interview/>}/>
       <Route path="/dashboard" element={<InterviewDashboard/>}/>
-      <Route path="/interview/:interviewId" element={<InterviewDetail/>} />
+      <Route path="/detail/:id" element={<InterviewDetail/>} />
+      
 
     </Routes>
     </div>
