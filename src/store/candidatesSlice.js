@@ -18,7 +18,7 @@ const normalizeStateToArray = (s) => {
 };
 
 
-const candidatesSlice = createSlice({
+export const candidatesSlice = createSlice({
   name: "candidates",
   initialState,
   reducers: {
