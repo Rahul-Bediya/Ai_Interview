@@ -53,6 +53,25 @@ export  function Resume() {
     <section className="relative min-h-screen flex flex-col overflow-hidden bg-gradient-to-br from-gray-950 via-gray-900 to-black">
       <Scene3D />
       <Navbar />
+        {/* Floating particles */}
+                  <div className="absolute inset-0">
+                      {[...Array(20)].map((_, i) => (
+                          <motion.div
+                              key={i}
+                              className="absolute w-2 h-2 bg-indigo-300/40 rounded-full"
+                              style={{
+                                  left: `${Math.random() * 100}%`,
+                                  top: `${Math.random() * 100}%`,
+                              }}
+                              animate={{ y: [0, -20, 0], opacity: [0.2, 0.8, 0.2] }}
+                              transition={{
+                                  duration: 3 + Math.random() * 2,
+                                  repeat: Infinity,
+                                  delay: Math.random() * 2,
+                              }}
+                          />
+                      ))}
+                  </div>
 
       <div className="flex-1 flex items-center justify-center px-4 relative z-10">
         <div className="w-full max-w-xl bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-10 shadow-lg text-center">
