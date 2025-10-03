@@ -8,7 +8,7 @@ const initialState = {
   currentCandidate: null, // { id, name, email, phone, jobTitle, jobDescription, experience, date }
   currentQuestion: 0,
   answers: [], // saved during interview (per-question with score & notes)
-  // questions: [], // AI-generated questions
+  timeLeft: null, //add timer
 };
 
  const sessionSlice = createSlice({
@@ -24,6 +24,7 @@ const initialState = {
       };
       state.currentQuestion = 0;
       state.answers = [];
+      state.timeLeft=null; // add state for time store 
     },
 
     // called by Profile.jsx to add jobTitle/jd/experience
@@ -40,6 +41,7 @@ const initialState = {
       // action.payload expected: { id, text, level, type, answer, timeTaken, score?, notes? }
       state.answers.push(action.payload);
       state.currentQuestion = (state.currentQuestion || 0) + 1;
+      state.timeLeft=null; //reset for next question
     },
 
     // finalize this session (does NOT push to global candidates list)
@@ -70,10 +72,14 @@ const initialState = {
     hydrateSession: (state, action) => {
       return { ...state, ...action.payload };
     },
+
+    setTimeLeft:(state,action)=>{
+      state.timeLeft=action.payload;
+    }
   },
 });
 
 
 
-export const { setCandidate, updateCandidate, setQuestions, saveAnswer, completeSession, resetSession, hydrateSession } = sessionSlice.actions;
+export const { setCandidate, updateCandidate, setQuestions, saveAnswer, completeSession, resetSession, hydrateSession,setTimeLeft } = sessionSlice.actions;
 export default sessionSlice.reducer;
