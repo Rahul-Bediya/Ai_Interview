@@ -65,7 +65,7 @@ This project is an AI-driven Interview Assistant built with React and Redux. It 
 
 ## 📹Demo
 
-* **Video Walkthrough**: (Add link here)
+* **Video Walkthrough**:https://vimeo.com/1124140221?share=copy
 * **Live App**: https://ai-interview-kappa-puce.vercel.app/
 ## 📌Authors
 
